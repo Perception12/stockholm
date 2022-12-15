@@ -1,5 +1,5 @@
 :root {
-  --gradient:  linear-gradient(
+  --gradient: linear-gradient(
     to bottom,
     hsl(202.96, 100%, 45.1%) 0%,
     hsl(205.6, 80.2%, 50.73%) 7.7%,
@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: var(--gradient)
+  background: var(--gradient);
 }
 
 .container {
@@ -54,7 +54,7 @@
 }
 
 .weather-info {
-  display: flex;  
+  display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
@@ -84,7 +84,6 @@
   gap: 5px;
 }
 
-
 .location-info h3 {
   color: rgba(0, 0, 0, 0.6);
 }
@@ -100,7 +99,7 @@
   transform: scale(0.5);
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width: 900px) {
   .container {
     flex-direction: column-reverse;
     align-items: center;
@@ -108,12 +107,13 @@
   }
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .degree h1 {
-  font-size: 3rem;
-}
+    font-size: 3rem;
+  }
 
-.weather-info {
-  flex-direction: column;
-}
+  .weather-info {
+    flex-direction: column;
+    align-items: center;
+  }
 }
