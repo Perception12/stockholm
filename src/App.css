@@ -1,38 +1,119 @@
+:root {
+  --gradient:  linear-gradient(
+    to bottom,
+    hsl(202.96, 100%, 45.1%) 0%,
+    hsl(205.6, 80.2%, 50.73%) 7.7%,
+    hsl(206.8, 79.04%, 53.74%) 14.5%,
+    hsl(207.72, 77.95%, 56.37%) 20.7%,
+    hsl(208.44, 76.88%, 58.78%) 26.3%,
+    hsl(209, 75.8%, 61.01%) 31.5%,
+    hsl(209.42, 74.71%, 63.08%) 36.5%,
+    hsl(209.72, 73.62%, 64.99%) 41.5%,
+    hsl(209.92, 72.54%, 66.75%) 46.6%,
+    hsl(210.02, 71.47%, 68.34%) 52%,
+    hsl(210.04, 70.45%, 69.76%) 57.9%,
+    hsl(210, 69.49%, 71%) 64.4%,
+    hsl(209.92, 68.61%, 72.05%) 71.6%,
+    hsl(209.83, 67.87%, 72.9%) 79.9%,
+    hsl(209.73, 67.29%, 73.53%) 89.3%,
+    hsl(209.66, 66.92%, 73.92%) 100%
+  );
+
+  --orange: #e6731d;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  color: white;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  background: var(--gradient)
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  position: relative;
+  display: flex;
+  padding: 1rem 2rem;
+  background: var(--gradient);
+  justify-content: space-between;
+  width: 50%;
+  align-items: flex-start;
+  border-radius: 2rem;
+  box-shadow: 0px 8px 15px 2px hsl(209.66, 66.92%, 73.92%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-img {
+  position: absolute;
+  width: 10rem;
+  bottom: -2rem;
+  left: -4rem;
+}
+
+.weather-info {
+  display: flex;  
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.degree {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: -2rem;
+  align-items: center;
+}
+
+.degree h1 {
+  font-size: 4rem;
+}
+
+.metrics {
+  text-align: start;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+
+.location-info h3 {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.location img {
+  width: 3rem;
+  transform: scale(0.5);
+}
+
+@media screen and (max-width:900px) {
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 80%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+@media screen and (max-width:400px) {
+  .degree h1 {
+  font-size: 3rem;
+}
+
+.weather-info {
+  flex-direction: column;
+}
 }
