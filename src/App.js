@@ -86,7 +86,7 @@ function App() {
 export default App;
 
 const addImage = (data, setImage) => {
-  data = data.lower()
+  data = data.toLowerCase()
   if (data.includes("rain")) {
     setImage(rainy)
   } else if (data.includes("sun")) {
