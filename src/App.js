@@ -8,6 +8,7 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 function App() {
   // For checking if the data has been fetched
   const [loading, setLoading] = useState(true);
+  const [noData, setNoData ] = useState(false)
   const [weatherData, setWeatherData] = useState({});
   const [image, setImage] = useState(cloudy)
   // 59.33, 18.07
@@ -26,6 +27,7 @@ function App() {
         })
         .catch((err) => {
           console.log(err.message);
+          setNoData(true)
           setLoading(false);
         });
     };
@@ -37,7 +39,7 @@ function App() {
     <div className="App">
       <>
       <h1>Stockholm Weather</h1>
-      {!loading ? (
+      {!loading ? !noData ? (
         <div className="container">
           <img src={image} alt="cloudy" className="app-img" />
           <div className="weather-info">
@@ -73,7 +75,7 @@ function App() {
             </div>
           </div>
         </div>
-      ) : (
+      ) : <div>Couldn't get data</div> : (
         <div>
           <ScaleLoader color="#FFF" size={150} />
         </div>
