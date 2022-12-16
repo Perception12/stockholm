@@ -1,8 +1,9 @@
-import cloudy from "./cloudy.png"
-import rainy from "./rainy.png"
-import storm from "./storm.png"
-import sun from "./sun.png"
-import locationIcon from "./ic_location.png"
+import cloudy from "./images/cloudy.png"
+import rainy from "./images/rainy.png"
+import storm from "./images/storm.png"
+import sun from "./images/sun.png"
+import fog from "./images/fog.png"
+import locationIcon from "./icons/ic_location.png"
 
 
 export {
@@ -10,5 +11,6 @@ export {
     rainy,
     storm,
     sun,
+    fog,
     locationIcon,
 }

@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { cloudy, locationIcon, rainy, storm, sun } from "./assets";
+import { cloudy, locationIcon, rainy, storm, sun, fog } from "./assets";
 import moment from "moment";
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
                 </p>
                 <p>
                   {/* Convert from m/s to km/hr */}
-                  Wind : {weatherData.wind.speed * 3.6} Km/hr
+                  Wind : {(weatherData.wind.speed * 3.60).toFixed(2)} Km/hr
                 </p>
             </div>
           </div>
@@ -83,12 +83,15 @@ function App() {
 export default App;
 
 const addImage = (data, setImage) => {
+  data = data.lower()
   if (data.includes("rain")) {
     setImage(rainy)
   } else if (data.includes("sun")) {
     setImage(sun)
   } else if (data.includes("storm")) {
     setImage(storm)
+  } else if (data.includes("fog") | data.includes("mist")) {
+    setImage(fog)
   } else {
     setImage(cloudy)
   }
