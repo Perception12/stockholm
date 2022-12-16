@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { cloudy, locationIcon, rainy, storm, sun, fog } from "./assets";
 import moment from "moment";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 function App() {
   // For checking if the data has been fetched
@@ -73,7 +74,9 @@ function App() {
           </div>
         </div>
       ) : (
-        <div style={{ color: "white" }}>loading...</div>
+        <div>
+          <ScaleLoader color="#FFF" size={150} />
+        </div>
       )}
       </>
     </div>
